@@ -10,7 +10,7 @@ const stripe = new Stripe(
   },
 );
 
-const endpointSecret = "whsec_5f42a983d1f464d0da0d2a2f5a2c1e76b61619a6bb63f92e00839abfac065d85"
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET ?? '';
 
 export async function POST(req: NextRequest) {
   // Get the body
